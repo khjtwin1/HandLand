@@ -1,0 +1,52 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Python caches / tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# ML artifacts (large files: models, checkpoints, datasets)
+*.h5
+*.keras
+*.ckpt
+*.pb
+*.tflite
+*.onnx
+*.pkl
+*.joblib
+*.npy
+*.npz
+logs/
+runs/
+checkpoints/
+data/
+datasets/
