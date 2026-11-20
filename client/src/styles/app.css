@@ -1,28 +1,29 @@
-/* 로그인 후 임시 화면 (스테이지 맵이 만들어지면 교체) */
-.home-placeholder {
+/* 불러오는 중 */
+.app-loading {
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+}
+
+/* 아직 만들지 않은 화면 */
+.coming-soon {
+  min-height: calc(100vh - 81px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   text-align: center;
 }
 
-.home-placeholder__title {
+.coming-soon__title {
   margin: 0;
   font-family: var(--font-title);
   font-size: 40px;
 }
 
-.home-placeholder__desc {
+.coming-soon__desc {
   margin: 0;
-  color: var(--color-text-muted);
-}
-
-.app-loading {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
   color: var(--color-text-muted);
 }
