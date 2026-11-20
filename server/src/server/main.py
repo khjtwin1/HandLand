@@ -1,4 +1,5 @@
 import importlib
+import os
 import pkgutil
 
 from fastapi import APIRouter, Depends, FastAPI
@@ -27,10 +28,18 @@ for module_info in pkgutil.iter_modules(routers_pkg.__path__):
         if isinstance(obj, APIRouter):
             app.include_router(obj)
 
-# 프론트(React + Vite, 기본 5173 포트)에서 이 서버를 호출할 수 있게 허용
+# 프론트(React + Vite)에서 이 서버를 호출할 수 있게 허용
+# 배포할 때는 환경변수 ALLOWED_ORIGINS 에 프론트 주소를 쉼표로 구분해 적는다
+# 예) ALLOWED_ORIGINS=https://handland.vercel.app,http://localhost:5173
+ALLOWED_ORIGINS = [
+    o.strip()
+    for o in os.getenv("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+    if o.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
