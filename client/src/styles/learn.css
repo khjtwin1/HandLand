@@ -1,0 +1,154 @@
+/* 스테이지 학습 화면 */
+.learn {
+  max-width: 1358px;
+  margin: 0 auto;
+  padding: 55px 24px 100px;
+}
+
+.learn__message {
+  margin: 120px 0 24px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.learn__top {
+  display: grid;
+  grid-template-columns: minmax(0, 851px) minmax(0, 429px);
+  gap: 30px;
+}
+
+/* 카메라 패널 */
+.learn__stage {
+  position: relative;
+  min-height: 482px;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #171f29;
+}
+
+.learn__stage .camera-view {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  background: transparent;
+}
+
+.learn__stage .camera-view__message {
+  color: #c8ced6;
+}
+
+.learn__word {
+  position: absolute;
+  top: 31px;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 66px;
+  padding: 0 24px;
+  border-radius: 54px;
+  background: var(--color-bg);
+  font-family: var(--font-title);
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--color-text);
+  transform: translateX(-50%);
+}
+
+.learn__nocamera {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #c8ced6;
+}
+
+.learn__chips {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  left: 24px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learn__chip {
+  padding: 6px 14px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.learn__chip--active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.learn__side {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.learn__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  width: calc(100% - 459px);
+  margin: 18px 0 62px;
+}
+
+.learn__replay,
+.learn__quiz {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 151px;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.learn__replay {
+  background: var(--color-chip);
+  color: var(--color-text);
+}
+
+.learn__quiz {
+  background: #004fe0;
+  color: var(--color-on-primary);
+}
+
+.learn__replay:disabled,
+.learn__quiz:disabled {
+  background: var(--color-chip);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+@media (max-width: 1100px) {
+  .learn__top {
+    grid-template-columns: 1fr;
+  }
+
+  .learn__actions {
+    width: 100%;
+  }
+}

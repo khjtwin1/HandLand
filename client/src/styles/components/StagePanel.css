@@ -1,0 +1,126 @@
+.stage-panel {
+  min-height: 694px;
+  padding: 47px 35px 40px;
+  border: 1px solid #b9b9b9;
+  border-radius: 36px;
+  background: var(--color-bg);
+}
+
+.stage-panel__no {
+  margin: 0;
+  font-size: 16px;
+}
+
+.stage-panel__title {
+  margin: 10px 0 14px;
+  font-family: var(--font-title);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.stage-panel__desc {
+  margin: 0;
+  font-size: 16px;
+}
+
+.stage-panel__words-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 37px;
+}
+
+.stage-panel__words-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.stage-panel__words-header span {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.stage-panel__words {
+  margin: 12px 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.stage-panel__word {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  border-top: 1px solid var(--color-line);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.stage-panel__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+}
+
+.stage-panel__mark img {
+  width: 14px;
+  height: auto;
+}
+
+.stage-panel__ring {
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--color-map);
+  border-radius: 50%;
+}
+
+.stage-panel__text {
+  flex: 1;
+}
+
+.stage-panel__state {
+  color: var(--color-gray-state);
+}
+
+.stage-panel__word--done .stage-panel__state {
+  color: var(--color-gray-done);
+}
+
+.stage-panel__word--in_progress .stage-panel__state {
+  color: var(--color-map);
+}
+
+.stage-panel__word--waiting .stage-panel__text {
+  color: var(--color-gray-state);
+}
+
+.stage-panel__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stage-panel__button {
+  height: 61px;
+  border: none;
+  border-radius: 18px;
+  background: var(--color-map);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--color-on-primary);
+  cursor: pointer;
+}
+
+.stage-panel__button--sub {
+  background: var(--color-chip);
+  color: var(--color-text);
+}
+
+.stage-panel__button:disabled {
+  background: var(--color-chip);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
