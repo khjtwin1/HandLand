@@ -47,6 +47,8 @@ class Card(Base):
     kind = Column(String(10), nullable=False)            # 'letter' | 'word' | 'sentence'
     text = Column(String(100), nullable=False)           # 예: 'ㄱ', '안녕하세요'
     video_url = Column(String(255))                      # 1단계 강의 영상 주소
+    image_url = Column(String(255))                      # 올바른 수어 모습 이미지 (카메라 없이 풀기 보기)
+    description = Column(String(300))                    # 동작 설명 (해설)
 
 
 class Stage(Base):
@@ -57,8 +59,9 @@ class Stage(Base):
     id = Column(Integer, primary_key=True)
     theme_id = Column(Integer, ForeignKey("themes.id"), nullable=False)
     chapter_no = Column(Integer, nullable=False)         # 1~8
-    kind = Column(String(10), nullable=False)            # 'letter' | 'word' | 'sentence' | 'review'
+    kind = Column(String(10), nullable=False)            # 'letter' | 'word' | 'sentence' | 'review' | 'quest'
     title = Column(String(100), nullable=False)
+    description = Column(String(200))                    # 스테이지 설명 (지도 오른쪽 패널)
 
 
 class StageCard(Base):
@@ -96,16 +99,40 @@ class UserCard(Base):
     collected_at = Column(DateTime, server_default=func.now())
 
 
+class LearningRecord(Base):
+    """카드를 연습할 때마다 쌓이는 기록. 홈 화면의 최근 학습 기록, 다시 연습할 동작에 사용"""
+    __tablename__ = "learning_records"
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    card_id = Column(Integer, ForeignKey("cards.id"), nullable=False)
+    stage_id = Column(Integer, ForeignKey("stages.id"), nullable=False)
+    accuracy = Column(Float, nullable=False)                   # 그때의 정확도(%)
+    created_at = Column(DateTime, server_default=func.now())
+
+
+class StudySession(Base):
+    """스테이지를 한 번 풀 때 걸린 시간. 학습 리포트의 누적 학습 시간에 사용"""
+    __tablename__ = "study_sessions"
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    stage_id = Column(Integer, ForeignKey("stages.id"), nullable=False)
+    seconds = Column(Integer, default=0, nullable=False)
+    created_at = Column(DateTime, server_default=func.now())
+
+
 # 상점 / 꾸미기
 class Item(Base):
     """상점에서 파는 꾸미기 아이템"""
     __tablename__ = "items"
 
     id = Column(Integer, primary_key=True)
-    category = Column(String(10), nullable=False)        # 'hat' | 'top' | 'bottom'
+    category = Column(String(10), nullable=False)        # 'hair' | 'face' | 'outfit'
     name = Column(String(50), nullable=False)
-    price = Column(Integer, nullable=False)              # 핸드코인
+    price = Column(Integer, nullable=False)              # 핸드코인 (0이면 기본 지급 아이템)
     image_url = Column(String(255))
+    required_tier = Column(String(20))                   # 구매에 필요한 티어 (예: '플래티넘'). 없으면 제한 없음
 
 
 class UserItem(Base):
