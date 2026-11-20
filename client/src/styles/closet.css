@@ -1,0 +1,122 @@
+/* 캐릭터 꾸미기 */
+.closet {
+  position: relative;
+  max-width: 1328px;
+  margin: 0 auto;
+  padding: 107px 24px 100px;
+}
+
+.closet__message {
+  margin: 120px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.closet__title {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 48px;
+  line-height: 64px;
+}
+
+.closet__desc {
+  margin: 30px 0 31px;
+  font-size: 16px;
+  color: var(--color-text-sub);
+}
+
+.closet__coins {
+  position: absolute;
+  top: 118px;
+  right: 24px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  height: 76px;
+  padding: 0 24px;
+  border: 1.2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+  font-size: 14px;
+}
+
+.closet__coins strong {
+  font-size: 22px;
+  color: var(--color-primary);
+}
+
+.closet__coins button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.closet__top {
+  display: grid;
+  grid-template-columns: minmax(0, 836px) minmax(0, 420px);
+  gap: 24px;
+}
+
+.closet__items {
+  margin-top: 69px;
+}
+
+.closet__items-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.closet__items-header h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.closet__items-header p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: var(--color-text-sub);
+}
+
+.closet__tabs {
+  display: flex;
+  gap: 10px;
+  margin: 31px 0 20px;
+}
+
+.closet__tab {
+  height: 48px;
+  padding: 0 23px;
+  border: 1.2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closet__tab--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.closet__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(243px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 1100px) {
+  .closet__top {
+    grid-template-columns: 1fr;
+  }
+
+  .closet__coins {
+    position: static;
+    margin-bottom: 24px;
+  }
+}
