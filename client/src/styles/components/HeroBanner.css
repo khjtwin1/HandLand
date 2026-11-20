@@ -1,0 +1,93 @@
+/* 홈 맨 위 파란 배너 */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 445px;
+  padding: 44px;
+  border-radius: var(--radius-panel);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.hero-banner__body {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner__eyebrow {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hero-banner__stage {
+  margin: 0 0 8px;
+  font-family: var(--font-title);
+  font-size: clamp(24px, 2.5vw, 40px);
+}
+
+.hero-banner__title {
+  margin: 0;
+  max-width: 560px;
+  font-family: var(--font-title);
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-banner__count {
+  margin: 28px 0 16px;
+  font-size: 19px;
+}
+
+.hero-banner .progress-bar {
+  max-width: 292px;
+}
+
+.hero-banner__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 36px;
+}
+
+.hero-banner__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 61px;
+  padding: 0 24px;
+  border: 1.2px solid var(--color-on-primary);
+  border-radius: var(--radius-pill);
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hero-banner__button--fill {
+  background: var(--color-on-primary);
+  color: var(--color-primary);
+}
+
+.hero-banner__button--outline {
+  color: var(--color-on-primary);
+}
+
+.hero-banner__button:hover {
+  opacity: 0.9;
+}
+
+.hero-banner__mascot {
+  position: absolute;
+  top: 28px;
+  right: 3.5%;
+  width: min(431px, 36%);
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .hero-banner__mascot {
+    display: none;
+  }
+}
