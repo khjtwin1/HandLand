@@ -1,0 +1,481 @@
+/* 게임 플레이 */
+.game-button {
+  height: 52px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 60px;
+  background: var(--color-primary);
+  font-size: 18px;
+  color: var(--color-on-primary);
+  cursor: pointer;
+}
+
+.game-button:disabled {
+  background: #a9bfee;
+  cursor: not-allowed;
+}
+
+.room-message {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-text-muted);
+}
+
+/* 방 만들기 / 입장 */
+.game-lobby {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.game-lobby h1 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 40px;
+}
+
+.game-lobby__desc {
+  margin: 12px 0 32px;
+  color: var(--color-text-muted);
+}
+
+.game-lobby__error {
+  color: var(--color-danger);
+}
+
+.game-lobby__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.game-lobby__card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+}
+
+.game-lobby__card h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.game-lobby__card label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.game-lobby__card input[type="text"],
+.game-lobby__card input:not([type]),
+.game-lobby__card input[type="number"] {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg);
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.game-lobby__card fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.game-lobby__card legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.game-lobby__card .game-lobby__choice {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.game-lobby__choice small {
+  color: var(--color-text-muted);
+}
+
+/* 대기실 */
+.room-waiting {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 70px;
+  min-height: 100vh;
+  padding: 45px 60px;
+}
+
+.room-waiting__side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.room-waiting__code {
+  margin: 0;
+  padding: 24px 20px;
+  border: 3px solid var(--color-text);
+  border-radius: 40px;
+  font-family: var(--font-title);
+  font-size: 40px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.room-waiting__kind {
+  margin: 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.room-waiting__info {
+  margin: 0;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.room-waiting__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.room-waiting__start {
+  height: 120px;
+  border: 3px solid var(--color-text);
+  background: var(--color-bg);
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.room-waiting__start:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.room-waiting__hint {
+  margin: 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.room-waiting__leave {
+  height: 44px;
+  border: none;
+  border-radius: 41px;
+  background: var(--color-chip);
+  cursor: pointer;
+}
+
+.room-waiting__board {
+  padding: 40px 50px;
+  border: 3px solid var(--color-text);
+  border-radius: 200px 200px 200px 200px / 140px;
+}
+
+.room-waiting__count {
+  margin: 0 0 20px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.room-waiting__board ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.room-waiting__board li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  aspect-ratio: 1;
+  padding: 10px;
+  border: 3px solid var(--color-text);
+  border-radius: 28px;
+  font-weight: 600;
+}
+
+.room-waiting__board li small {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: var(--color-primary);
+  font-size: 12px;
+}
+
+.room-waiting__avatar {
+  flex: 1;
+  width: 60%;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--color-panel);
+}
+
+/* 게임 진행 */
+.room-play {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 440px;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 40px 60px;
+}
+
+.room-play__main {
+  position: relative;
+  min-height: 800px;
+  overflow: hidden;
+  border-radius: 100px;
+  background: #171f29;
+}
+
+.room-play__main .camera-view {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  background: transparent;
+}
+
+.room-play__main .camera-view__message {
+  color: #c8ced6;
+}
+
+.room-play__word {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  height: 110px;
+  padding: 0 48px;
+  border-radius: 109px;
+  background: var(--color-bg);
+  font-family: var(--font-title);
+  font-size: 56px;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+
+.room-play__notice,
+.room-play__winner {
+  position: absolute;
+  left: 50%;
+  margin: 0;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(19px);
+  color: var(--color-on-primary);
+  transform: translateX(-50%);
+}
+
+.room-play__notice {
+  top: 180px;
+}
+
+.room-play__winner {
+  top: 50%;
+  font-size: 28px;
+}
+
+.room-play__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(23, 31, 41, 0.9);
+  color: var(--color-on-primary);
+  text-align: center;
+}
+
+.room-play__overlay h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 44px;
+}
+
+.room-play__overlay ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 22px;
+  line-height: 1.9;
+}
+
+.room-play__count {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 200px;
+  line-height: 1;
+}
+
+.room-play__accuracy {
+  position: absolute;
+  right: 60px;
+  bottom: 30px;
+  left: 60px;
+  display: grid;
+  grid-template-columns: 52px 1fr 44px;
+  gap: 16px;
+  align-items: center;
+  color: var(--color-on-primary);
+}
+
+.room-play__bar {
+  position: relative;
+  height: 9px;
+  border-radius: 35px;
+  background: #d9d9d9;
+}
+
+.room-play__bar div {
+  height: 100%;
+  border-radius: 35px;
+  background: var(--color-map);
+  transition: width 0.3s;
+}
+
+.room-play__bar i {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 17px;
+  background: var(--color-on-primary);
+}
+
+.room-play__side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.room-play__time {
+  margin: 0;
+  min-height: 56px;
+  font-size: 44px;
+  text-align: center;
+}
+
+.room-play__number {
+  margin: 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.room-play__ranking {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.room-play__ranking li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 12px;
+}
+
+.room-play__ranking .room-play__me {
+  background: var(--color-primary-soft);
+  font-weight: 600;
+}
+
+.room-play__score {
+  margin: 0;
+  padding: 14px;
+  border: 3px solid var(--color-text);
+  border-radius: 40px;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* 결과 팝업 */
+.room-result {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.room-result__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(480px, 90vw);
+  padding: 40px;
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+}
+
+.room-result__box h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 32px;
+}
+
+.room-result__box ol {
+  width: 100%;
+  max-height: 50vh;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.room-result__box li {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.room-result__box .room-result__me {
+  background: var(--color-primary-soft);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .room-waiting,
+  .room-play,
+  .game-lobby__grid {
+    grid-template-columns: 1fr;
+  }
+}
