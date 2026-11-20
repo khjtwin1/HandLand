@@ -1,7 +1,7 @@
 import math
 import random
 import string
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 from server.database import get_db
 from server.room_rules import (
     COUNTDOWN_SECONDS, MIN_PLAYERS_TO_START, POINTS_PER_WIN, ROOM_WIN_AT, RULES_SECONDS,
+    WIN_PAUSE_SECONDS,
 )
 from server.models import Card, GameRoom, RoomPlayer, RoomQuestion, RoomTheme, Theme, User
 from server.security import get_current_user
@@ -264,6 +265,14 @@ def submit_answer(code: str, body: AnswerRequest, db: Session = Depends(get_db),
         return {"accepted": False, "reason": "already_won"}
 
     player.score += POINTS_PER_WIN
+
+    # 누가 맞히면 남은 시간을 건너뛰어 바로 다음 문제로:
+    # 시작 시각을 앞당기면 모든 참여자의 현재 단계가 함께 넘어간다 (결과 확인용으로 WIN_PAUSE_SECONDS 는 남김)
+    in_question = (now_utc() - room.started_at).total_seconds() - RULES_SECONDS - COUNTDOWN_SECONDS
+    left = room.time_limit - (in_question - tl["index"] * room.time_limit)
+    if left > WIN_PAUSE_SECONDS:
+        room.started_at -= timedelta(seconds=left - WIN_PAUSE_SECONDS)
+
     db.commit()
     return {"accepted": True, "points": POINTS_PER_WIN, "score": player.score}
 
