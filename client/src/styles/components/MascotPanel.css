@@ -1,0 +1,38 @@
+/* 로그인 왼쪽 파란 패널 (홈 화면의 파란 배너와 같은 스타일) */
+.mascot-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-panel);
+  min-height: 560px;
+  padding: 56px 48px;
+}
+
+.mascot-panel__eyebrow {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mascot-panel__title {
+  margin: 0 0 16px;
+  font-family: var(--font-title);
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.2;
+}
+
+.mascot-panel__desc {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* 마스코트는 패널 아래쪽에 걸쳐 살짝 잘리게 둔다 (Figma 배너와 동일) */
+.mascot-panel__mascot {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  width: min(62%, 431px);
+  height: auto;
+}
