@@ -48,5 +48,9 @@ Thumbs.db
 logs/
 runs/
 checkpoints/
-data/
+data/*
+!data/fingerspelling.csv
 datasets/
+
+# MediaPipe 모델 파일 (용량 큼, 각자 내려받기)
+*.task
