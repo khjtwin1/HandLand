@@ -54,3 +54,7 @@ datasets/
 
 # MediaPipe 모델 파일 (용량 큼, 각자 내려받기)
 *.task
+
+# 배포 서버에 필요한 모델 파일은 저장소에 포함한다
+!models/fingerspelling_rf.joblib
+!models/hand_landmarker.task
