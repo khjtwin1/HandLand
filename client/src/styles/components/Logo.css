@@ -1,0 +1,16 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo__image {
+  width: 43px;
+  height: 43px;
+}
+
+.logo__text {
+  font-family: var(--font-title);
+  font-size: 20px;
+  color: var(--color-text);
+}

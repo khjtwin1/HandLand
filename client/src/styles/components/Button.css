@@ -1,0 +1,30 @@
+.button {
+  height: 56px;
+  padding: 0 28px;
+  border: 1.2px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button--outline {
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.button--full {
+  width: 100%;
+}
+
+.button:disabled {
+  background: var(--color-chip);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}

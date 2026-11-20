@@ -1,0 +1,87 @@
+/* 폰트 연결 */
+@font-face {
+  font-family: 'HSYeolumMulbit';
+  src: url('../fonts/HSYeolumMulbit.ttf') format('truetype');
+  font-weight: 700; /* 파일이 Bold 하나뿐이라 700으로 지정 */
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard/Pretendard-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard/Pretendard-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard/Pretendard-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/Pretendard/Pretendard-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* 디자인 토큰: 디자인이 바뀌면 여기만 고치면 된다 (Figma 기준) */
+:root {
+  --color-primary: #004fe0;
+  --color-primary-soft: #e5f0ff;
+  --color-primary-softer: #dde9ff;
+  --color-bg: #ffffff;
+  --color-panel: #f5f7fa;
+  --color-chip: #f2f4f6;
+  --color-border: #d2d2d2;
+  --color-text: #000000;
+  --color-text-sub: #313131;
+  --color-text-muted: #666666;
+  --color-danger: #e70000;
+  --color-on-primary: #ffffff;
+
+  --font-title: 'HSYeolumMulbit', 'Pretendard', sans-serif;
+  --font-body: 'Pretendard', system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+
+  --radius-pill: 130px;
+  --radius-card: 24px;
+  --radius-panel: 40px;
+}
+
+/* 초기화 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* 키보드 포커스는 항상 눈에 띄게 (접근성) */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
