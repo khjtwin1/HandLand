@@ -1,0 +1,77 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  max-width: 1531px;
+  margin: 0 auto;
+  padding: 46px 24px 100px;
+}
+
+.home__message {
+  margin: 120px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* 탐험 현황 */
+.home__section {
+  margin-top: 37px;
+}
+
+.home__section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 27px;
+}
+
+.home__section-title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.home__section-desc {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-text-sub);
+}
+
+.home__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.home__more img {
+  margin: 0 8px;
+}
+
+.theme-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 학습 기록 */
+.home__records {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 43px;
+  margin-top: 62px;
+}
+
+@media (max-width: 900px) {
+  .home__records {
+    grid-template-columns: 1fr;
+  }
+}
