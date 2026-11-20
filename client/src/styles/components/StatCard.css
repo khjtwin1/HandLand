@@ -1,0 +1,40 @@
+/* 리포트 요약 카드 */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 128px;
+  padding: 27px 24px;
+  box-sizing: border-box;
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+}
+
+.stat-card dt {
+  font-size: 14px;
+  color: #4e5968;
+}
+
+.stat-card dd {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+}
+
+.stat-card__value {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #191f28;
+}
+
+.stat-card__sub {
+  font-size: 14px;
+  color: #4e5968;
+}
+
+.stat-card__sub--up {
+  font-weight: 600;
+  color: #15803d;
+}
