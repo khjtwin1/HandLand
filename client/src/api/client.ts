@@ -1,5 +1,5 @@
 // 서버 주소: .env 에 VITE_API_URL 을 적으면 바뀌고, 없으면 로컬 서버를 쓴다
-const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
+export const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
 
 // 서버가 돌려준 오류(상태 코드 + 메시지)
 export class ApiError extends Error {

@@ -1,0 +1,50 @@
+/* 탐험 지도 화면 */
+.map-page {
+  max-width: 1358px;
+  margin: 0 auto;
+  padding: 87px 24px 100px;
+}
+
+.map-page__title {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.map-page__desc {
+  margin: 20px 0 46px;
+  font-size: 16px;
+  color: var(--color-text-sub);
+}
+
+.map-page__message {
+  margin: 120px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.map-page__body {
+  display: grid;
+  grid-template-columns: minmax(0, 819px) minmax(0, 459px);
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.map-page__empty {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  min-height: 692px;
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+  color: var(--color-text-muted);
+  font-size: 20px;
+}
+
+@media (max-width: 1100px) {
+  .map-page__body {
+    grid-template-columns: 1fr;
+  }
+}

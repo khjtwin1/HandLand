@@ -1,0 +1,37 @@
+/* 수어, 청각장애 안내 배너 4개 */
+.tip-banners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 31px;
+  margin: 74px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tip-banners__item {
+  min-height: 227px;
+  padding: 35px;
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+}
+
+.tip-banners__icon {
+  display: block;
+}
+
+.tip-banners__title {
+  margin: 15px 0 12px;
+  font-family: var(--font-title);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.tip-banners__body {
+  margin: 0;
+  font-size: 18.6px;
+  line-height: 1.6;
+}
+
+.tip-banners__body span {
+  display: block;
+}

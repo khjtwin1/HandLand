@@ -1,0 +1,101 @@
+/* 홈 아래쪽 목록 카드(최근 학습 기록, 다시 연습할 동작) */
+.record-panel {
+  min-height: 349px;
+  padding: 46px 42px 32px 49px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 32px;
+  background: var(--color-bg);
+}
+
+.record-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.record-panel__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.record-panel__aside {
+  font-size: 17.5px;
+  color: var(--color-text);
+}
+
+/* 설명 글자는 회색 */
+.record-panel__aside--muted {
+  color: var(--color-text-muted);
+}
+
+.record-panel__empty {
+  margin: 56px 0 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* 목록: 위쪽 선은 굵게, 행 사이 선은 얇게 */
+.record-list {
+  margin: 0 9px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--color-text);
+}
+
+.record-list__row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 70px;
+  padding: 0 11px;
+  font-size: 22px;
+}
+
+.record-list__row + .record-list__row {
+  border-top: 1px solid var(--color-line-strong);
+}
+
+.record-list__text {
+  flex: 1;
+}
+
+.record-list__stage {
+  margin-right: 35px;
+  font-size: 17.5px;
+  color: var(--color-text-faint);
+}
+
+/* 최근 학습 기록은 점수가 선 끝에 거의 붙어 있다 */
+.record-list__row--recent {
+  padding-right: 2px;
+}
+
+.record-list__score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 64px;
+}
+
+/* 낮은 일치도는 빨간 글자 + 경고 아이콘 */
+.record-list__score--danger {
+  color: var(--color-danger);
+}
+
+.record-list__chip {
+  display: inline-grid;
+  place-items: center;
+  height: 39px;
+  min-width: 86px;
+  padding: 0 11px;
+  border-radius: 51px;
+  background: var(--color-primary-softer);
+  font-size: 17.5px;
+  color: var(--color-primary);
+  text-decoration: none;
+}

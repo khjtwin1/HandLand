@@ -1,0 +1,65 @@
+.accuracy-panel {
+  position: relative;
+  min-height: 262px;
+  padding: 27px 29px;
+  border: 0.7px solid #bcbcbc;
+  border-radius: 26px;
+  background: var(--color-bg);
+}
+
+.accuracy-panel__label {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.accuracy-panel__value {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 24px;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.accuracy-panel__pass {
+  font-size: 14px;
+  font-weight: 400;
+  color: #008234;
+}
+
+.accuracy-panel__details {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-line);
+  list-style: none;
+}
+
+.accuracy-panel__details li {
+  display: grid;
+  grid-template-columns: 62px 1fr 34px;
+  gap: 8px;
+  align-items: center;
+  height: 37px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.accuracy-panel__details li > span:first-child {
+  color: #626262;
+}
+
+.accuracy-panel__details li > span:last-child {
+  text-align: right;
+}
+
+.accuracy-panel__bar {
+  height: 3px;
+  background: var(--color-track);
+}
+
+.accuracy-panel__bar div {
+  height: 100%;
+  background: var(--color-map);
+}

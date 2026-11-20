@@ -1,0 +1,76 @@
+/* 캐릭터 미리보기 */
+.character-preview {
+  position: relative;
+  min-height: 580px;
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+}
+
+.character-preview__chip {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  font-size: 14px;
+  color: var(--color-primary);
+}
+
+.character-preview__reset {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1.2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.character-preview__reset:disabled {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.character-preview__figure {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 296px;
+  height: 380px;
+  border: 1.2px dashed var(--color-border);
+  border-radius: var(--radius-card);
+  color: var(--color-text-muted);
+  transform: translateX(-50%);
+}
+
+.character-preview__slots {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: var(--color-bg);
+  list-style: none;
+}
+
+.character-preview__slots span {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.character-preview__slots strong {
+  font-size: 16px;
+}

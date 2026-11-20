@@ -9,9 +9,12 @@ from sqlalchemy.orm import Session
 from server import models  # noqa: F401  (모델을 불러와야 Base가 테이블을 인식함)
 from server import routers as routers_pkg
 from server.database import Base, engine, get_db
+from server.seed import ensure_columns
 
 # 서버가 켜질 때 없는 테이블을 자동으로 생성 (이미 있으면 건드리지 않음)
 Base.metadata.create_all(bind=engine)
+# 이미 있는 테이블에 새로 생긴 컬럼도 자동으로 추가 (create_all 은 컬럼을 못 추가함)
+ensure_columns()
 
 app = FastAPI(title="Handland API")
 

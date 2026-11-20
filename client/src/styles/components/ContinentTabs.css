@@ -1,0 +1,31 @@
+/* 대륙 선택 탭 */
+.continent-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.continent-tab {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  height: 44px;
+  padding: 0 19px;
+  border: 1.2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: 16px;
+  color: var(--color-text-sub);
+  cursor: pointer;
+}
+
+.continent-tab--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.continent-tab--closed {
+  background: var(--color-panel);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,80 @@
+/* 아이템 카드 */
+.item-card {
+  padding: 13px 16px 16px;
+  border: 1.2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+}
+
+.item-card--trying {
+  border-color: var(--color-primary);
+}
+
+.item-card__pic {
+  position: relative;
+  height: 140px;
+  margin: 0 -3px 16px;
+  border-radius: 16px;
+  background: var(--color-panel);
+}
+
+.item-card__pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-card__chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  font-size: 13px;
+  color: var(--color-on-primary);
+}
+
+.item-card__name {
+  margin: 0;
+  font-size: 17px;
+}
+
+.item-card__category {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.item-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+.item-card__footer button {
+  height: 40px;
+  padding: 0 14px;
+  border: 1.2px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: 14px;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.item-card__footer button:disabled {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.item-card__lock {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--color-text-muted);
+}

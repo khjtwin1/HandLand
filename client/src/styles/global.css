@@ -44,6 +44,20 @@
   --color-text-muted: #666666;
   --color-danger: #e70000;
   --color-on-primary: #ffffff;
+  /* 선, 막대 색은 Figma에서 값을 못 읽어 눈대로 맞춘 값 (확인 필요) */
+  --color-line: #e5e5e5;
+  --color-line-strong: #8a8a8a;
+  --color-track: #e5e8ec;
+  --color-text-faint: #767676;
+  /* 지도, 스테이지 화면에서 쓰는 파랑과 상태 색 (Figma 기준) */
+  --color-map: #1d4ed8;
+  --color-gray-state: #7d7d7d;
+  --color-gray-done: #929292;
+  --color-flag: #0b6b6b;
+  --color-node-gray: #6b7684;
+  --color-pass: #2f9c60;
+  --color-pass-line: #59ac79;
+  --color-retry: #e70000;
 
   --font-title: 'HSYeolumMulbit', 'Pretendard', sans-serif;
   --font-body: 'Pretendard', system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif;
